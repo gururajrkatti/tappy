@@ -371,7 +371,11 @@ class TestParser(unittest.TestCase):
                    - foo
                  expect:
                    - bar
-               output: "a multiline string\\nmust be handled properly\\neven with | pipes\\n| here > and: there"'''
+               output: |-
+                 a multiline string
+                 must be handled properly
+                 even with | pipes
+                 | here > and: there"""
             )
             self.assertEqual(3, len(lines))
             self.assertEqual(13, lines[0].version)
